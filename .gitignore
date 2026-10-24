@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+
+# Arquivos pessoais que NÃO devem ir pro GitHub
+/img/
+*.exe

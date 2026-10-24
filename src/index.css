@@ -1,0 +1,369 @@
+/* ===== Variáveis (mude as cores aqui e muda no site todo) ===== */
+:root {
+  --marrom: #5a3825;
+  --marrom-escuro: #3b2416;
+  --caramelo: #c8843c;
+  --creme: #fdf6ec;
+  --branco: #ffffff;
+  --texto: #2b1d14;
+  --verde: #2e9b4f;
+  --vermelho: #c0392b;
+  --sombra: 0 4px 14px rgba(59, 36, 22, 0.12);
+  --raio: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* compensa o header fixo quando clica num link do menu */
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--creme);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--marrom);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* ===== Componentes reutilizáveis ===== */
+.secao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+.secao > h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.botao {
+  display: inline-block;
+  background: var(--caramelo);
+  color: var(--branco);
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.botao:hover {
+  background: var(--marrom);
+}
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--marrom-escuro);
+  color: var(--creme);
+  box-shadow: var(--sombra);
+}
+
+.header__conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.header__titulo {
+  color: var(--creme);
+  font-size: 1.3rem;
+}
+
+.header__nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.header__nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header__nav a:hover {
+  color: var(--caramelo);
+}
+
+.header__data {
+  display: inline-block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Só a primeira letra maiúscula: "Quinta-feira, 22 de outubro" */
+.header__data::first-letter {
+  text-transform: uppercase;
+}
+
+/* ===== Banner ===== */
+.banner {
+  position: relative;
+  max-height: 520px;
+  overflow: hidden;
+}
+
+.banner__img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.banner__texto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 8%;
+  background: linear-gradient(90deg, rgba(59, 36, 22, 0.85), rgba(59, 36, 22, 0.1));
+  color: var(--creme);
+}
+
+.banner__texto h2 {
+  color: var(--creme);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+/* ===== Catálogo ===== */
+.catalogo__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.filtro {
+  border: 2px solid var(--caramelo);
+  background: transparent;
+  color: var(--marrom);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filtro.ativo,
+.filtro:hover {
+  background: var(--caramelo);
+  color: var(--branco);
+}
+
+.catalogo__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.card__nome {
+  font-size: 1.15rem;
+  padding: 12px 16px 0;
+}
+
+.card__preco {
+  padding: 4px 16px 16px;
+  color: var(--caramelo);
+  font-weight: 600;
+}
+
+/* ===== Sobre ===== */
+.sobre p {
+  max-width: 750px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+.sobre__destaque {
+  font-weight: 600;
+  color: var(--caramelo);
+}
+
+/* ===== Localização ===== */
+.localizacao__conteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.localizacao__mapa {
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.localizacao__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status.aberto { color: var(--verde); }
+.status.fechado { color: var(--vermelho); }
+
+.horarios {
+  list-style: none;
+  width: 100%;
+}
+
+.horarios li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(90, 56, 37, 0.25);
+}
+
+.horarios li.hoje {
+  font-weight: 700;
+  color: var(--caramelo);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--marrom-escuro);
+  color: var(--creme);
+  padding: 40px 16px 16px;
+}
+
+.footer h3 {
+  color: var(--caramelo);
+  margin-bottom: 8px;
+}
+
+.footer__conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer__contato {
+  font-style: normal;
+}
+
+.footer__redes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer__copyright {
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(253, 246, 236, 0.2);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ===== Botão WhatsApp flutuante ===== */
+.botao-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  background: #25d366;
+  color: var(--branco);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.botao-whatsapp:hover {
+  transform: scale(1.08);
+}
+
+/* ===== Celular ===== */
+@media (max-width: 768px) {
+  .header__conteudo {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__nav {
+    justify-content: center;
+  }
+
+  .banner__img {
+    height: 380px;
+  }
+
+  .localizacao__conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__copyright {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}
