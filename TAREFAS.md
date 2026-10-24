@@ -47,7 +47,9 @@ Procure por `TODO` no VS Code (Ctrl+Shift+F) pra achar tudo que falta.
 | 8 | ✅ | `Footer.jsx` | Links das redes + ano automático | atributos de link |
 | 9 | ✅ | `BotaoWhatsApp.jsx` | Botão flutuante (com o logo do WhatsApp em SVG) | template string, URL |
 
-**Ainda falta (não é código):** confirmar os horários reais com a padaria e atualizar `src/data/padaria.js` (tem um `TODO` lá).
+✅ Horários reais confirmados com a padaria.
+
+**Site no ar:** https://projeto-padaria-gilt.vercel.app/ (atualiza sozinho a cada `git push`).
 
 ### Lições que ficaram
 
@@ -72,4 +74,4 @@ Sugestão: faça uma tarefa, salve, veja no navegador, e me chame pra checar.
 - **Carrinho** que monta o pedido e envia pelo WhatsApp (bom pra praticar `useState` com array).
 - **Menu hambúrguer** no celular.
 - ✅ ~~Converter as fotos pra **.webp**~~ (feito, script em `scripts/converter-imagens.js`).
-- Publicar grátis na **Vercel** ou **Netlify** ← próximo passo sugerido.
+- ✅ ~~Publicar grátis na **Vercel**~~ (feito).
