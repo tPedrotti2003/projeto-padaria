@@ -9,6 +9,13 @@ export default function Footer() {
           <h3>Contato</h3>
           <p>Telefone: {padaria.telefone}</p>
           <p>Endereço: {padaria.endereco}</p>
+          <p>
+            Site:{" "}
+            <a href={padaria.site}>
+              {/* Mostra o endereço sem "https://" e sem a barra do final */}
+              {padaria.site.replace("https://", "").replace(/\/$/, "")}
+            </a>
+          </p>
         </address>
 
         <div className="footer__redes">
