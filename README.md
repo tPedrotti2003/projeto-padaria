@@ -4,6 +4,8 @@ Site da **Padaria e Lancheria Protásio Alves**, em Porto Alegre (RS), feito com
 
 🔗 **Veja funcionando:** https://projeto-padaria-gilt.vercel.app/
 
+![Página inicial do site da padaria](docs/print-site.webp)
+
 ## Funcionalidades
 
 - **Catálogo de produtos** com filtro por categoria (tortinhas, doces, bolos, salgados)
