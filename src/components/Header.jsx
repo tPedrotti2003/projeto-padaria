@@ -6,6 +6,7 @@ import "dayjs/locale/pt-br";
 const links = [
   { href: "#inicio", texto: "Início" },
   { href: "#catalogo", texto: "Produtos" },
+  { href: "#encomendas", texto: "Encomendas" },
   { href: "#sobre", texto: "Sobre" },
   { href: "#localizacao", texto: "Onde estamos" },
   { href: "#contato", texto: "Contato" },
