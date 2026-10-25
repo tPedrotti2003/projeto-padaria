@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { padaria } from "../data/padaria.js";
 import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
@@ -11,19 +12,31 @@ const links = [
 ];
 
 export default function Header() {
-  const dataHoje = dayjs().locale("pt-br").format("dddd, DD [de] MMMM [de] YYYY");
-  
+  const dataHoje = dayjs()
+    .locale("pt-br")
+    .format("dddd, DD [de] MMMM [de] YYYY");
+  const [menuAberto, setMenuAberto] = useState(false);
+
   return (
     <header className="header">
       <div className="header__conteudo">
         <h1 className="header__titulo">{padaria.nome}</h1>
 
+        <button
+          className="menu-botao"
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-label="Abrir menu"
+        >
+          {menuAberto ? "✕" : "☰"}
+        </button>
+
         <nav>
-          <ul className="header__nav">
-            {/* .map() transforma cada item do array em um <li> */}
+          <ul className={menuAberto ? "header__nav aberto" : "header__nav"}>
             {links.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.texto}</a>
+                <a href={link.href} onClick={() => setMenuAberto(false)}>
+                  {link.texto}
+                </a>
               </li>
             ))}
           </ul>

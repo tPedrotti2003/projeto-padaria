@@ -115,6 +115,18 @@ a {
   color: var(--caramelo);
 }
 
+/* Botão ☰ do menu hambúrguer: escondido no computador, aparece só no celular */
+.menu-botao {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--creme);
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
 .header__data {
   display: inline-block;
   font-size: 0.85rem;
@@ -346,13 +358,42 @@ a {
 
 /* ===== Celular ===== */
 @media (max-width: 768px) {
-  .header__conteudo {
-    justify-content: center;
-    text-align: center;
+  /* Menu hambúrguer no celular:
+     linha 1 = nome + botão ☰, linha 2 = data, linha 3 = menu (só quando aberto) */
+  .menu-botao {
+    display: block;
   }
 
+  .header__titulo {
+    font-size: 1.1rem;
+  }
+
+  .header__data {
+    order: 3;
+    width: 100%;
+  }
+
+  .header__conteudo > nav {
+    order: 4;
+    width: 100%;
+  }
+
+  /* Fechado: o menu some */
   .header__nav {
-    justify-content: center;
+    display: none;
+  }
+
+  /* Aberto: o React coloca a classe "aberto" e o menu aparece em coluna */
+  .header__nav.aberto {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__nav a {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid rgba(253, 246, 236, 0.15);
   }
 
   .banner__img {

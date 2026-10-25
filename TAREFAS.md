@@ -71,7 +71,7 @@ Sugestão: faça uma tarefa, salve, veja no navegador, e me chame pra checar.
 ## Ideias pra depois (quando terminar tudo)
 
 - Seção de **encomendas** (bolos e salgados para festa) com mensagem pronta no WhatsApp.
-- **Carrinho** que monta o pedido e envia pelo WhatsApp (bom pra praticar `useState` com array).
-- **Menu hambúrguer** no celular.
+- Botão **"Perguntar no WhatsApp"** em cada card ("Vocês têm X hoje?"). Substitui a ideia do carrinho: como os produtos são feitos no dia, controlar estoque no site daria trabalho demais. A padaria confirma a disponibilidade pelo WhatsApp.
+- ✅ ~~**Menu hambúrguer** no celular~~ (feito: `useState` com true/false, `!` pra inverter, classe condicional).
 - ✅ ~~Converter as fotos pra **.webp**~~ (feito, script em `scripts/converter-imagens.js`).
 - ✅ ~~Publicar grátis na **Vercel**~~ (feito).
