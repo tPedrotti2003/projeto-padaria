@@ -13,6 +13,7 @@ Site da **Padaria e Lancheria Protásio Alves**, em Porto Alegre (RS), feito com
 - **Lista de horários** com o dia de hoje em destaque
 - **Mapa do Google** e botão "Como chegar", sem precisar de chave de API
 - **Botão flutuante do WhatsApp** que abre a conversa com uma mensagem pronta
+- **"Perguntar no WhatsApp" em cada produto**: o cliente pergunta se o produto tem hoje, já que tudo é feito no dia e a disponibilidade muda
 - **Menu hambúrguer** no celular
 - **Data de hoje** no topo, em português (com dayjs)
 - **Imagens otimizadas** em `.webp` (de 2–3 MB para menos de 170 KB cada)
