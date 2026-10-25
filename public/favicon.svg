@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fundo marrom-escuro, mesma cor do topo do site -->
+  <rect width="64" height="64" rx="14" fill="#3b2416"/>
+  <!-- Parte de cima do chapéu de chef: três "nuvens" + corpo -->
+  <g fill="#fdf6ec">
+    <circle cx="21" cy="25" r="9"/>
+    <circle cx="32" cy="20" r="11"/>
+    <circle cx="43" cy="25" r="9"/>
+    <rect x="19" y="25" width="26" height="15"/>
+  </g>
+  <!-- Faixa do chapéu em caramelo -->
+  <rect x="19" y="40" width="26" height="9" rx="2" fill="#c8843c"/>
+</svg>
