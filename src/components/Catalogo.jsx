@@ -38,7 +38,7 @@ export default function Catalogo() {
       </div>
 
       {produtosFiltrados.length === 0 ? (
-        <p>Nenhum produto nessa categoria.</p>
+        <p>Nenhum produto nesta categoria.</p>
       ) : null}
     </section>
   );

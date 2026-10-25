@@ -14,28 +14,28 @@ export const categorias = [
 export const produtos = [
   {
     id: 1,
-    nome: "Tortinha de Limão",
+    nome: "Tortinha de limão",
     categoria: "tortas",
     preco: 9.0,
     imagem: "/img/tortinha-limao.webp",
   },
   {
     id: 2,
-    nome: "Tortinha de Maçã",
+    nome: "Tortinha de maçã",
     categoria: "tortas",
     preco: 9.0,
     imagem: "/img/tortinha-maca.webp",
   },
   {
     id: 3,
-    nome: "Tortinha de Morango",
+    nome: "Tortinha de morango",
     categoria: "tortas",
     preco: 9.0,
     imagem: "/img/tortinha-morango.webp",
   },
   {
     id: 4,
-    nome: "Sonho de Creme / Doce de Leite",
+    nome: "Sonho de creme / doce de leite",
     categoria: "doces",
     preco: 8.0,
     imagem: "/img/sonhos.webp",
@@ -84,7 +84,7 @@ export const produtos = [
   },
   {
     id: 11,
-    nome: "Bolo rei",
+    nome: "Bolo-rei",
     categoria: "bolos",
     preco: null,
     imagem: "/img/bolo-rei.webp",
