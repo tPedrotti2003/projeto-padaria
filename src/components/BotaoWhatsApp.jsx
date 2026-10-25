@@ -1,9 +1,9 @@
-import { padaria } from "../data/padaria.js";
+import { linkWhatsApp } from "../utils/whatsapp.js";
 
 export default function BotaoWhatsApp() {
   const mensagem = "Olá, gostaria de tirar uma dúvida";
 
-  const url = `https://wa.me/${padaria.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+  const url = linkWhatsApp(mensagem);
 
   return (
     <a

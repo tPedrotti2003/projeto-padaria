@@ -207,6 +207,10 @@ a {
   overflow: hidden;
   box-shadow: var(--sombra);
   transition: transform 0.2s;
+  /* Coluna: assim o botão do WhatsApp fica sempre no pé do card,
+     mesmo quando o nome do produto ocupa duas linhas */
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -225,9 +229,28 @@ a {
 }
 
 .card__preco {
-  padding: 4px 16px 16px;
+  padding: 4px 16px 12px;
   color: var(--caramelo);
   font-weight: 600;
+}
+
+/* Botão "Perguntar no WhatsApp" de cada card */
+.card__whatsapp {
+  margin: auto 16px 16px; /* "auto" em cima empurra o botão pro fim do card */
+  padding: 8px 12px;
+  border: 2px solid #25d366;
+  border-radius: 999px;
+  color: #1e7a3e;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.card__whatsapp:hover {
+  background: #25d366;
+  color: var(--branco);
 }
 
 /* ===== Sobre ===== */
