@@ -5,3 +5,6 @@ dist
 # Arquivos pessoais que NÃO devem ir pro GitHub
 /img/
 *.exe
+
+# Anotações de estudo (ficam só no computador)
+TAREFAS.md
