@@ -26,7 +26,7 @@ export default function Header() {
         <button
           className="menu-botao"
           onClick={() => setMenuAberto(!menuAberto)}
-          aria-label="Abrir menu"
+          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
         >
           {menuAberto ? "✕" : "☰"}
         </button>

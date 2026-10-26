@@ -1,0 +1,11 @@
+# Padroniza a quebra de linha em LF (padrão Linux/Mac) em todos os computadores.
+# Sem isso, o Windows troca pra CRLF e o Git mostra arquivos "modificados"
+# sem nenhuma mudança de verdade.
+* text=auto eol=lf
+
+# Arquivos binários: o Git nunca deve mexer neles
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

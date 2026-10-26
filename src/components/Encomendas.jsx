@@ -23,6 +23,8 @@ Detalhes: ${detalhes}`;
     window.open(linkWhatsApp(mensagem), "_blank");
   }
 
+  const dataHoje = dayjs().format("YYYY-MM-DD");
+
   return (
     <section id="encomendas" className="secao encomendas">
       <h2>Encomendas</h2>
@@ -51,9 +53,9 @@ Detalhes: ${detalhes}`;
             value={tipo}
             onChange={(evento) => setTipo(evento.target.value)}
           >
-            {tipos.map((tipo) => (
-              <option key={tipo} value={tipo}>
-                {tipo}
+            {tipos.map((opcao) => (
+              <option key={opcao} value={opcao}>
+                {opcao}
               </option>
             ))}
           </select>
@@ -65,6 +67,7 @@ Detalhes: ${detalhes}`;
             id="data"
             type="date"
             required
+            min={dataHoje}
             value={data}
             onChange={(evento) => setData(evento.target.value)}
           />
