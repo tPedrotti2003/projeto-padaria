@@ -1,19 +1,15 @@
 export default function Banner() {
   return (
     <section id="inicio" className="banner">
+      {/* Título escondido: não aparece na tela (o nome já está na imagem),
+          mas o Google e os leitores de tela leem */}
+      <h2 className="sr-only">Feito por nós, todo dia</h2>
+
       <img
         src="/img/banner.webp"
-        alt="Produtos da Padaria Protásio Alves"
+        alt="Padaria Protásio Alves: pão quentinho, todos os dias"
         className="banner__img"
       />
-
-      <div className="banner__texto">
-        <h2>Feito por nós, todo dia</h2>
-        <p>Pães, doces, bolos e salgados fresquinhos, sem terceirização.</p>
-        <a href="#catalogo" className="botao">
-          Ver produtos
-        </a>
-      </div>
     </section>
   );
 }

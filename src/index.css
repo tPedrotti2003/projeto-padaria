@@ -138,35 +138,31 @@ a {
   text-transform: uppercase;
 }
 
+/* Esconde o texto da tela, mas o Google e os leitores de tela continuam lendo.
+   (Não usar display: none, porque aí os leitores de tela também ignoram) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===== Banner ===== */
 .banner {
-  position: relative;
   max-height: 520px;
   overflow: hidden;
 }
 
 .banner__img {
+  display: block; /* tira o espacinho que a imagem deixa embaixo */
   width: 100%;
   height: 520px;
   object-fit: cover;
-}
-
-.banner__texto {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 0 8%;
-  background: linear-gradient(90deg, rgba(59, 36, 22, 0.85), rgba(59, 36, 22, 0.1));
-  color: var(--creme);
-}
-
-.banner__texto h2 {
-  color: var(--creme);
-  font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
 /* ===== Catálogo ===== */
