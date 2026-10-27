@@ -1,12 +1,22 @@
 import { padaria } from "../data/padaria.js";
 import { diasDaSemana, estaAberto } from "../utils/horario.js";
+import { useState, useEffect } from "react";
 
 // Mapa do Google sem precisar de chave de API: só o endereço na URL
 const urlMapa = `https://www.google.com/maps?q=${encodeURIComponent(padaria.endereco)}&output=embed`;
 const urlComoChegar = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(padaria.endereco)}`;
 
 export default function Localizacao() {
-  const aberto = estaAberto(padaria.horarios);
+  const [agora, setAgora] = useState(new Date());
+  const aberto = estaAberto(padaria.horarios, agora);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAgora(new Date());
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="localizacao" className="secao localizacao">
@@ -41,7 +51,7 @@ export default function Localizacao() {
             {padaria.horarios.map((horario, indice) => (
               <li
                 key={indice}
-                className={indice === new Date().getDay() ? "hoje" : ""}
+                className={indice === agora.getDay() ? "hoje" : ""}
               >
                 <span>{diasDaSemana[indice]}</span>
                 <span>
