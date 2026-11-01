@@ -1,18 +1,36 @@
 import { useState } from "react";
 import { linkWhatsApp } from "../utils/whatsapp.js";
+import { padaria } from "../data/padaria.js";
+import { ehFeriado } from "../utils/horario.js";
 import dayjs from "dayjs";
 
 // Tipos de encomenda que aparecem no <select>
 const tipos = ["Bolo de aniversário", "Pão francês", "Outro"];
+const DIAS_ANTECEDENCIA = 2;
 
 export default function Encomendas() {
   const [nome, setNome] = useState("");
   const [tipo, setTipo] = useState(tipos[0]);
   const [data, setData] = useState("");
   const [detalhes, setDetalhes] = useState("");
+  const [erro, setErro] = useState("");
 
   function enviar(evento) {
     evento.preventDefault();
+
+    const diaDaSemana = dayjs(data).day();
+
+    if (
+      padaria.horarios[diaDaSemana] === null ||
+      ehFeriado(data, padaria.feriados)
+    ) {
+      setErro(
+        "Nesse dia a padaria está fechada. Escolha outra data, por favor.",
+      );
+      return;
+    }
+
+    setErro("");
 
     const mensagem = `Olá, gostaria de fazer uma encomenda.
 Nome: ${nome}
@@ -23,7 +41,7 @@ Detalhes: ${detalhes}`;
     window.open(linkWhatsApp(mensagem), "_blank");
   }
 
-  const dataHoje = dayjs().format("YYYY-MM-DD");
+  const dataMinima = dayjs().add(DIAS_ANTECEDENCIA, "day").format("YYYY-MM-DD");
 
   return (
     <section id="encomendas" className="secao encomendas">
@@ -40,6 +58,7 @@ Detalhes: ${detalhes}`;
           <input
             id="nome"
             type="text"
+            placeholder="Ex: Fulano de Tal"
             required
             value={nome}
             onChange={(evento) => setNome(evento.target.value)}
@@ -67,10 +86,16 @@ Detalhes: ${detalhes}`;
             id="data"
             type="date"
             required
-            min={dataHoje}
+            min={dataMinima}
             value={data}
-            onChange={(evento) => setData(evento.target.value)}
+            onChange={(evento) => {
+              setData(evento.target.value);
+              setErro("");
+            }}
           />
+          <p className="campo__dica">
+            Encomendas com pelo menos {DIAS_ANTECEDENCIA} dias de antecedência.
+          </p>
         </div>
 
         <div className="campo">
@@ -83,6 +108,8 @@ Detalhes: ${detalhes}`;
             onChange={(evento) => setDetalhes(evento.target.value)}
           />
         </div>
+
+        {erro ? <p className="encomendas__erro">{erro}</p> : null}
 
         <button type="submit" className="botao">
           Enviar pelo WhatsApp

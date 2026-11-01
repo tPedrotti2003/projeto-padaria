@@ -333,6 +333,22 @@ a {
   resize: vertical;
 }
 
+/* Textinho de ajuda embaixo de um campo */
+.campo__dica {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* Mensagem de erro do formulário (ex: dia em que a padaria está fechada) */
+.encomendas__erro {
+  color: var(--vermelho);
+  background: rgba(192, 57, 43, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
 /* O .botao foi feito pra <a>; num <button> precisa tirar a borda e herdar a fonte */
 button.botao {
   border: none;
