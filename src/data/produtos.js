@@ -164,7 +164,7 @@ export const produtos = [
     id: 22,
     nome: "Bauru de presunto",
     categoria: "salgados",
-    preco: null,
+    preco: 12.0,
     imagem: "/img/bauru-presunto.webp",
   },
   {
