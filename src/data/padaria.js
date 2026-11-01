@@ -21,4 +21,33 @@ export const padaria = {
     { abre: "06:30", fecha: "19:30" }, // sexta
     { abre: "07:00", fecha: "12:00" }, // sábado
   ],
+
+  // Dias em que a padaria fica FECHADA (feriados, férias...), mesmo sendo dia de semana.
+  // Mesmo formato dos avisos: de "de" até "ate", incluindo os dois dias.
+  // Feriado de um dia só: "de" e "ate" iguais.
+  feriados: [
+    { de: "2026-11-02", ate: "2026-11-02" }, // Finados
+    { de: "2026-12-24", ate: "2027-01-03" }, // Festas de fim de ano
+  ],
+
+  // Avisos que aparecem numa faixa no topo do site.
+  // Cada aviso só aparece entre as datas "de" e "ate" (formato ano-mês-dia).
+  // Passou a data, ele some sozinho. Não precisa apagar.
+  // Exemplo:
+  //   { de: "2026-12-20", ate: "2026-12-25", texto: "Dia 25/12 (Natal) estaremos fechados." },
+  avisos: [
+    {
+      id: "finados",
+      de: "2026-10-29",
+      ate: "2026-11-02",
+      texto: "Dia 02/11 (Finados) estaremos fechados.",
+    },
+    {
+      id: "natal",
+      de: "2026-12-01",
+      ate: "2027-01-03",
+      texto:
+        "Fechados para as festas de fim de ano de 24/12/2026 a 03/01/2027. Voltamos segunda, 04/01/2027!",
+    },
+  ],
 };

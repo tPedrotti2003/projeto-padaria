@@ -8,7 +8,7 @@ const urlComoChegar = `https://www.google.com/maps/dir/?api=1&destination=${enco
 
 export default function Localizacao() {
   const [agora, setAgora] = useState(new Date());
-  const aberto = estaAberto(padaria.horarios, agora);
+  const aberto = estaAberto(padaria.horarios, agora, padaria.feriados);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,7 +47,7 @@ export default function Localizacao() {
           </p>
           {/* Usa o "agora" do estado, então também se atualiza a cada minuto */}
           <p className="status__detalhe">
-            {proximoHorario(padaria.horarios, agora)}
+            {proximoHorario(padaria.horarios, agora, padaria.feriados)}
           </p>
 
           <h3>Horários</h3>
