@@ -1,5 +1,5 @@
 import { padaria } from "../data/padaria.js";
-import { diasDaSemana, estaAberto } from "../utils/horario.js";
+import { diasDaSemana, estaAberto, proximoHorario } from "../utils/horario.js";
 import { useState, useEffect } from "react";
 
 // Mapa do Google sem precisar de chave de API: só o endereço na URL
@@ -44,6 +44,10 @@ export default function Localizacao() {
 
           <p className={aberto ? "status aberto" : "status fechado"}>
             {aberto ? "🟢 Aberto agora" : "🔴 Fechado agora"}
+          </p>
+          {/* Usa o "agora" do estado, então também se atualiza a cada minuto */}
+          <p className="status__detalhe">
+            {proximoHorario(padaria.horarios, agora)}
           </p>
 
           <h3>Horários</h3>

@@ -351,6 +351,13 @@ button.botao {
 .status.aberto { color: var(--verde); }
 .status.fechado { color: var(--vermelho); }
 
+/* Linha de baixo do status: "Fecha às 19:30" / "Abre amanhã às 06:30" */
+.status__detalhe {
+  margin-top: -4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 .horarios {
   list-style: none;
   width: 100%;

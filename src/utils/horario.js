@@ -28,3 +28,32 @@ export function estaAberto(horarios, agora = new Date()) {
 
   return minutosAgora >= minutosAbre && minutosAgora < minutosFecha;
 }
+
+export function proximoHorario(horarios, agora = new Date()) {
+  const horarioDeHoje = horarios[agora.getDay()];
+
+  if (estaAberto(horarios, agora)) {
+    return `Fecha às ${horarioDeHoje.fecha}`;
+  }
+
+  const minutosAgora = agora.getHours() * 60 + agora.getMinutes();
+
+  if (
+    horarioDeHoje !== null &&
+    minutosAgora < paraMinutos(horarioDeHoje.abre)
+  ) {
+    return `Abre hoje às ${horarioDeHoje.abre}`;
+  }
+
+  for (let i = 1; i <= 7; i++) {
+    const dia = (agora.getDay() + i) % 7;
+    const horarioDoDia = horarios[dia];
+
+    if (horarioDoDia !== null) {
+      if (i === 1) {
+        return `Abre amanhã às ${horarioDoDia.abre}`;
+      }
+      return `Abre ${diasDaSemana[dia].toLowerCase()} às ${horarioDoDia.abre}`;
+    }
+  }
+}
