@@ -6,6 +6,7 @@ export default function Catalogo() {
   // useState guarda qual botão de categoria está selecionado.
   // Quando chamamos setCategoriaAtiva('doces'), o React redesenha o componente.
   const [categoriaAtiva, setCategoriaAtiva] = useState("todos");
+  const [quantidade, setQuantidade] = useState(8);
 
   let produtosFiltrados;
 
@@ -16,6 +17,9 @@ export default function Catalogo() {
       (produto) => produto.categoria === categoriaAtiva,
     );
   }
+
+  const produtosVisiveis = produtosFiltrados.slice(0, quantidade);
+
   return (
     <section id="catalogo" className="secao catalogo">
       <h2>Nossos Produtos</h2>
@@ -25,17 +29,30 @@ export default function Catalogo() {
             key={cat.id}
             // Classe extra "ativo" só no botão selecionado
             className={cat.id === categoriaAtiva ? "filtro ativo" : "filtro"}
-            onClick={() => setCategoriaAtiva(cat.id)}
+            onClick={() => {
+              setCategoriaAtiva(cat.id);
+              setQuantidade(8);
+            }}
           >
             {cat.nome}
           </button>
         ))}
       </div>
       <div className="catalogo__grade">
-        {produtosFiltrados.map((produto) => (
+        {produtosVisiveis.map((produto) => (
           <ProdutoCard key={produto.id} produto={produto}></ProdutoCard>
         ))}
       </div>
+      {produtosFiltrados.length > quantidade ? (
+        <div className="catalogo__ver-mais">
+          <button
+            className="botao"
+            onClick={() => setQuantidade(quantidade + 8)}
+          >
+            Ver mais
+          </button>
+        </div>
+      ) : null}
 
       {produtosFiltrados.length === 0 ? (
         <p>Nenhum produto nesta categoria.</p>

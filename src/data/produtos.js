@@ -39,7 +39,7 @@ export const produtos = [
     nome: "Tortinha banoffee",
     categoria: "tortinhas",
     preco: 9.0,
-    imagem: "/img/tortinha-banofe.webp",
+    imagem: "/img/tortinha-banoffee.webp",
   },
   {
     id: 14,

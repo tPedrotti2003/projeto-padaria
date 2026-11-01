@@ -197,6 +197,12 @@ a {
   gap: 24px;
 }
 
+/* Área do botão "Ver mais" embaixo dos cards */
+.catalogo__ver-mais {
+  text-align: center;
+  margin-top: 32px;
+}
+
 .card {
   background: var(--branco);
   border-radius: var(--raio);
