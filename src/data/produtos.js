@@ -94,7 +94,7 @@ export const produtos = [
     id: 16,
     nome: "Croissant bombom",
     categoria: "doces",
-    preco: null,
+    preco: 10.0,
     imagem: "/img/croissant-bom-bom.webp",
   },
   {
@@ -121,7 +121,7 @@ export const produtos = [
   {
     id: 20,
     nome: "Rocambole de chocolate",
-    categoria: "doces",
+    categoria: "tortas",
     preco: null,
     imagem: "/img/rocambole-chocolate.webp",
   },
@@ -171,14 +171,14 @@ export const produtos = [
     id: 23,
     nome: "Croissant de frango com queijo",
     categoria: "salgados",
-    preco: null,
+    preco: 10.0,
     imagem: "/img/croissant-frango-queijo.webp",
   },
   {
     id: 24,
     nome: "Croissant de presunto e queijo",
     categoria: "salgados",
-    preco: null,
+    preco: 10.0,
     imagem: "/img/croissant-presunto-e-queijo.webp",
   },
   {
@@ -192,14 +192,14 @@ export const produtos = [
     id: 26,
     nome: "Pastel assado de frango",
     categoria: "salgados",
-    preco: null,
+    preco: 10.0,
     imagem: "/img/pastel-assado-frango.webp",
   },
   {
     id: 27,
     nome: "Pastel frito de carne",
     categoria: "salgados",
-    preco: null,
+    preco: 10.0,
     imagem: "/img/pastel-frito-carne.webp",
   },
   {
