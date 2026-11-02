@@ -34,7 +34,8 @@ Site da **Padaria e Lancheria Protásio Alves**, em Porto Alegre (RS), feito com
 - **Botão flutuante do WhatsApp** com mensagem pronta
 - **Menu hambúrguer** no celular
 - **Prévia do link** ao compartilhar no WhatsApp e redes sociais (Open Graph) e ícone próprio na aba (favicon)
-- **Imagens otimizadas** em `.webp` (de 2–3 MB para menos de 200 KB cada)
+- **Imagens otimizadas** em `.webp` (de 2–3 MB para menos de 200 KB cada), já recortadas no formato do card e em vários tamanhos com `srcset`: o navegador baixa só o tamanho que a tela precisa
+- **Lighthouse:** 100 em acessibilidade, boas práticas e SEO
 - Layout **responsivo** e cuidados de **acessibilidade** (`alt` nas imagens, `aria-label` nos botões, título escondido para leitores de tela)
 
 ## Tecnologias
