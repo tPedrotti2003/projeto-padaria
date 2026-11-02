@@ -2,7 +2,8 @@
 :root {
   --marrom: #5a3825;
   --marrom-escuro: #3b2416;
-  --caramelo: #c8843c;
+  --caramelo: #9c5f26; /* escuro o bastante para texto em fundo claro (contraste 4,5+) */
+  --caramelo-claro: #c8843c; /* para texto em fundo marrom escuro (header e rodapé) */
   --creme: #fdf6ec;
   --branco: #ffffff;
   --texto: #2b1d14;
@@ -126,7 +127,7 @@ a {
 }
 
 .header__nav a:hover {
-  color: var(--caramelo);
+  color: var(--caramelo-claro);
 }
 
 /* Botão ☰ do menu hambúrguer: escondido no computador, aparece só no celular */
@@ -419,7 +420,7 @@ button.botao {
 }
 
 .footer h3 {
-  color: var(--caramelo);
+  color: var(--caramelo-claro);
   margin-bottom: 8px;
 }
 
