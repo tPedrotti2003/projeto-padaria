@@ -1,5 +1,10 @@
 import { padaria } from "../data/padaria.js";
-import { diasDaSemana, estaAberto, proximoHorario } from "../utils/horario.js";
+import {
+  diasDaSemana,
+  estaAberto,
+  proximoHorario,
+  ehFeriado,
+} from "../utils/horario.js";
 import { useState, useEffect } from "react";
 
 // Mapa do Google sem precisar de chave de API: só o endereço na URL
@@ -9,6 +14,7 @@ const urlComoChegar = `https://www.google.com/maps/dir/?api=1&destination=${enco
 export default function Localizacao() {
   const [agora, setAgora] = useState(new Date());
   const aberto = estaAberto(padaria.horarios, agora, padaria.feriados);
+  const hojeEhFeriado = ehFeriado(agora, padaria.feriados);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,6 +23,16 @@ export default function Localizacao() {
 
     return () => clearInterval(timer);
   }, []);
+
+  function textoDoHorario(horario, indice) {
+    if (indice === agora.getDay() && hojeEhFeriado) {
+      return "Feriado";
+    } else if (horario === null) {
+      return "Fechado";
+    } else {
+      return `${horario.abre} às ${horario.fecha}`;
+    }
+  }
 
   return (
     <section id="localizacao" className="secao localizacao">
@@ -58,11 +74,7 @@ export default function Localizacao() {
                 className={indice === agora.getDay() ? "hoje" : ""}
               >
                 <span>{diasDaSemana[indice]}</span>
-                <span>
-                  {horario === null
-                    ? "Fechado"
-                    : `${horario.abre} às ${horario.fecha}`}
-                </span>
+                <span>{textoDoHorario(horario, indice)}</span>
               </li>
             ))}
           </ul>
