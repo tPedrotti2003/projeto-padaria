@@ -1,0 +1,31 @@
+# Roda os testes e o build no GitHub a cada push (e em pull requests).
+# O resultado aparece como ✅ ou ❌ ao lado de cada commit.
+name: Testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Baixa o código do repositório
+      - uses: actions/checkout@v4
+
+      # Instala o Node (mesma versão do computador) e guarda o cache do npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # Instala exatamente as versões do package-lock.json
+      - run: npm ci
+
+      # "run" = roda uma vez só e termina (sem ficar vigiando os arquivos)
+      - run: npx vitest run
+
+      # Garante que o site também compila sem erros
+      - run: npm run build

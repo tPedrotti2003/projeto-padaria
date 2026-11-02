@@ -1,5 +1,7 @@
 # Padaria e Lancheria Protásio Alves
 
+[![Testes](https://github.com/tPedrotti2003/projeto-padaria/actions/workflows/testes.yml/badge.svg)](https://github.com/tPedrotti2003/projeto-padaria/actions/workflows/testes.yml)
+
 Site da **Padaria e Lancheria Protásio Alves**, em Porto Alegre (RS), feito com React e Vite.
 
 🔗 **Veja funcionando:** https://projeto-padaria-gilt.vercel.app/
@@ -65,6 +67,8 @@ npm test
 ```
 
 Os testes ficam ao lado de cada arquivo, em `src/utils/*.test.js`.
+
+A cada push, o **GitHub Actions** roda os testes e o build automaticamente (`.github/workflows/testes.yml`). O selo no topo deste README mostra se está tudo passando.
 
 ## Organização do código
 
