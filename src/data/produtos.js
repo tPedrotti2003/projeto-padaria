@@ -56,6 +56,13 @@ export const produtos = [
     imagem: "/img/torta-marta-rocha.webp",
   },
   {
+    id: 20,
+    nome: "Rocambole de chocolate",
+    categoria: "tortas",
+    preco: null,
+    imagem: "/img/rocambole-chocolate.webp",
+  },
+  {
     id: 4,
     nome: "Sonho de creme / doce de leite",
     categoria: "doces",
@@ -117,13 +124,6 @@ export const produtos = [
     categoria: "doces",
     preco: 1.5,
     imagem: "/img/massinha-lisa.webp",
-  },
-  {
-    id: 20,
-    nome: "Rocambole de chocolate",
-    categoria: "tortas",
-    preco: null,
-    imagem: "/img/rocambole-chocolate.webp",
   },
   {
     id: 21,

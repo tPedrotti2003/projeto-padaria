@@ -27,6 +27,7 @@ export const padaria = {
   // Feriado de um dia só: "de" e "ate" iguais.
   feriados: [
     { de: "2026-11-02", ate: "2026-11-02" }, // Finados
+    { de: "2026-11-20", ate: "2026-11-20" }, // Consciência Negra
     { de: "2026-12-24", ate: "2027-01-03" }, // Festas de fim de ano
   ],
 
@@ -41,6 +42,12 @@ export const padaria = {
       de: "2026-10-29",
       ate: "2026-11-02",
       texto: "Dia 02/11 (Finados) estaremos fechados.",
+    },
+    {
+      id: "consciencia-negra",
+      de: "2026-11-16",
+      ate: "2026-11-20",
+      texto: "Dia 20/11 (Consciência Negra) estaremos fechados.",
     },
     {
       id: "natal",
